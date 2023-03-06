@@ -25,7 +25,7 @@ export default (props: Props) => {
           <div class="text-slate">
             <div class="flex items-center gap-1 op-60 text-slate">
               <IconEnv />
-              <span>System Role:</span>
+              <span>AI扮演的角色:</span>
             </div>
             <div class="mt-1">
               { props.currentSystemRoleSettings() }
@@ -35,7 +35,7 @@ export default (props: Props) => {
         <Show when={!props.currentSystemRoleSettings() && props.canEdit()}>
           <span onClick={() => props.setSystemRoleEditing(!props.systemRoleEditing())} class="inline-flex items-center justify-center gap-1 text-sm text-slate bg-slate/20 px-2 py-1 rounded-md transition-colors cursor-pointer hover:bg-slate/50">
             <IconEnv />
-            <span>Add System Role</span>
+            <span>增加AI扮演的角色</span>
           </span>
         </Show>
       </Show>
@@ -43,13 +43,13 @@ export default (props: Props) => {
         <div>
           <div class="flex items-center gap-1 op-60 text-slate">
             <IconEnv />
-            <span>System Role:</span>
+            <span>AI助手扮演的角色:</span>
           </div>
-          <p class="my-2 leading-normal text-slate text-sm op-60">Gently instruct the assistant and set the behavior of the assistant.</p>
+          <p class="my-2 leading-normal text-slate text-sm op-60">温和地指导助手并设置助手的行为</p>
           <div>
             <textarea
               ref={systemInputRef!}
-              placeholder="You are a helpful assistant, answer as concisely as possible...."
+              placeholder="需要AI助手通过什么样的言语回答"
               autocomplete="off"
               autofocus
               rows="3"
@@ -71,7 +71,7 @@ export default (props: Props) => {
             />
           </div>
           <button onClick={handleButtonClick} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
-            Set
+            设置
           </button>
         </div>
       </Show>
