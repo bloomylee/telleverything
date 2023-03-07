@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
+.DS_Store
+.DS_Store
+.DS_Store
