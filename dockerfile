@@ -1,11 +1,10 @@
 FROM node:alpine
-RUN mkdir -p /usr/src
 WORKDIR /usr/src
-COPY . /usr/src
-RUN npm install
-RUN npm run build
-EXPOSE 3000
-ENV HOST=0.0.0.0
-ENV PORT=3000
-ENV NODE_ENV=production
-CMD node dist/server/entry.mjs
+RUN npm install -g pnpm
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
+COPY . .
+RUN pnpm run build
+ENV HOST=0.0.0.0 PORT=3000 NODE_ENV=production
+EXPOSE $PORT
+CMD ["node", "dist/server/entry.mjs"]

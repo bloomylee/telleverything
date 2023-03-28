@@ -1,6 +1,7 @@
 # build output
 dist/
 .vercel/
+.netlify/
 
 # generated types
 .astro/
@@ -28,4 +29,3 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
-.DS_Store
